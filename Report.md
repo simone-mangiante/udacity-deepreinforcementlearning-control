@@ -9,7 +9,7 @@ The model is a set of fully connected layers (1 or 2 in my experiments) that con
 The agent makes use of an experience replay buffer from where it randomly samples previous `(state, action, reward, next_state)` tuples to build the batch for training.
 
 ### Parameters
-The actor and critic network are made of two connected layers of 256 and 128 nodes respectively.
+The actor and critic network are made of two hidden fully connected layers of 256 and 128 nodes respectively.
 
 Other parameters for the DDPG agent are:
 - Replay buffer size: `100000`
@@ -26,7 +26,7 @@ I did not introduce a gradient clipping like suggested in the project introducti
 ## Results
 After few consistent training runs completed in under 200 episodes, I decided to train my DDPG agent for 300 episodes (1000 steps max per episode), storing the fully trained checkpoints and the checkpoints from the earliest successful episode (i.e. the first time that 100 consecutive episodes had an average score greater than 30). After the training I watched the earliest and fully trained models for 3 times and recorded those scores.
 
-The environment was solved in XXX episodes, although I had runs with quicker training. Below is the plot of scores in training episodes.
+The environment was solved in 140 episodes, although I had runs with quicker training. Below is the plot of scores in training episodes.
 
 ![](layers-256-128.png)
 
